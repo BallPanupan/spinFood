@@ -1,0 +1,35 @@
+.app {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.doors {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.door {
+  width: 150px;
+  height: 200px;
+  border: 1px solid;
+  border-radius: 6px;
+}
+
+.door .boxes {
+  text-align: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.app .buttons {
+  align-self: center;
+  margin: 20px;
+}
