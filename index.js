@@ -43,6 +43,13 @@ const items = [
 
   async function spin() {
     console.log('spin');
+    
+
+    for (const door of doors) {
+      const boxes = door.querySelector(".boxes");
+      boxes.style.transform = `translateY(0px)`;
+    }
+
   }
 
   function init() {
@@ -56,7 +63,6 @@ const items = [
         boxes.appendChild(box);
         
       }
-
     }
   }
 
@@ -69,7 +75,7 @@ const items = [
 
     boxes.style.transitionDuration = "1s";
     boxes.style.transform = `translateY(-${
-    door.clientHeight * (pool.length - 1)
+    (door.clientHeight * 2)
     }px)`;
   }
 

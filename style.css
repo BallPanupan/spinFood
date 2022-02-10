@@ -11,6 +11,7 @@
   display: flex;
   justify-content: center;
   gap: 10px;
+  overflow: hidden;
 }
 
 .door {
@@ -21,8 +22,6 @@
 }
 
 .door .boxes {
-  display: flex;
-  flex-direction: column;
   text-align: center;
   flex-wrap: nowrap;
   justify-content: center;
@@ -37,4 +36,9 @@
 
 .boxes .box {
   font-size: 3rem;
+  height: 200px;
+  font-size: 3rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
