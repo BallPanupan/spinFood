@@ -1,5 +1,6 @@
 .app {
   width: 100%;
+  height: 80vh;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -20,9 +21,9 @@
 }
 
 .door .boxes {
-  text-align: center;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  text-align: center;
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
@@ -32,4 +33,8 @@
 .app .buttons {
   align-self: center;
   margin: 20px;
+}
+
+.boxes .box {
+  font-size: 3rem;
 }

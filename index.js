@@ -28,10 +28,11 @@ const items = [
 
 
 (function () {
-  const door = document.querySelectorAll(".door");
+  const doors = document.querySelectorAll(".door");
   const pool = ["❓"];
 
-  const boxes = document.querySelectorAll(".boxes");
+  const boxes = document.querySelector(".boxes");
+  const boxesClone = boxes.cloneNode(false);
 
   document.querySelector("#spinner").addEventListener("click", spin);
   document.querySelector("#reseter").addEventListener("click", init);
@@ -45,17 +46,39 @@ const items = [
   }
 
   function init() {
+    for (const door of doors) {
+      for (let index = 0; index < 2; index++) {
+        const boxes = door.querySelector(".boxes");
+        const box = document.createElement("div");
 
+        box.classList.add("box");
+        box.textContent = pool[0];
+        boxes.appendChild(box);
+        
+      }
+
+    }
   }
 
-
-  for (let index = 0; index < boxes.length; index++) {
+  for (const door of doors) {
+    const boxes = door.querySelector(".boxes");
     const box = document.createElement("div");
-
     box.classList.add("box");
     box.textContent = pool[0];
-    boxes[index].appendChild(box);
+    boxes.appendChild(box);
+
+    boxes.style.transitionDuration = "1s";
+    boxes.style.transform = `translateY(-${
+    door.clientHeight * (pool.length - 1)
+    }px)`;
   }
+
+
+
+
+
+
+
 
 
 
