@@ -35,7 +35,7 @@ const items = [
   const boxesClone = boxes.cloneNode(false);
 
   document.querySelector("#spinner").addEventListener("click", spin);
-  document.querySelector("#reseter").addEventListener("click", init);
+  document.querySelector("#reseter").addEventListener("click", reset);
 
   async function spin() {
     console.log('spin');
@@ -52,9 +52,15 @@ const items = [
 
   }
 
+  totleItem = 10;
+
+  function reset(){
+    console.log('Click Reset...')
+  }
+
   function init() {
     for (const door of doors) {
-      for (let index = 0; index < 2; index++) {
+      for (let index = 0; index < totleItem; index++) {
         const boxes = door.querySelector(".boxes");
         const box = document.createElement("div");
 
@@ -75,18 +81,9 @@ const items = [
 
     boxes.style.transitionDuration = "1s";
     boxes.style.transform = `translateY(-${
-    (door.clientHeight * 2)
+    (door.clientHeight * totleItem)
     }px)`;
   }
-
-
-
-
-
-
-
-
-
 
 
 
